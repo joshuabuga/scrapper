@@ -1,0 +1,266 @@
+{% extends "default/base.html" %}
+   
+    <!-- this makes message to auto dissappear after few seconds -->
+    <script type="text/javascript">
+
+    window.setTimeout(function() {
+    $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+        $(this).remove(); 
+    });
+}, 5000);
+    
+
+    </script>
+    
+    <!--end extensions -->
+  </head>
+{% block nav %}
+<!-- Outer Starts -->
+    <div class="outer">
+      <!-- Header two Starts -->
+      <div class="header-2">
+      
+        <!-- Container -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <!-- Logo section -->
+              <!-- <div class="logo">
+                {% load staticfiles %}
+                <img src="{% static "images/logo.png" %}" alt="logo"/>
+              </div> -->
+            </div>
+            <div class="col-md-8">
+            
+              <!-- Navigation starts.  -->
+              <div class="navy">      
+                <ul>
+                   <li><a href="/dashboard/">Dashboard</a></li>
+                    
+                   <li><a href="#">Go To</a>
+                                <ul>
+                                  
+                                  <li><a href="#">Tools</a>
+                                    <!-- Sub dropdown menu -->
+                                    <ul>
+                              <li><a href="#">Search</a></li>
+                                      <li><a href="/">Master List</a></li>
+                                      <li><a href="/upload/">Upload Property List</a></li>
+                                      
+                                      <li><a href="#">Help</a></li>
+                                    
+                                    </ul>
+                                  </li>
+                      
+                    
+                    </ul>
+                  </li>
+                
+
+                  
+     
+    
+        
+  <li><a href="/logout/">Sign Out</a></li>
+  
+  
+  
+      
+
+
+      
+      
+      
+      
+      
+       
+       
+     
+      
+       
+      
+       
+  
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}</a>
+          <ul class="dropdown-menu" role="menu">
+    
+  <li><a href="/logout/">Sign Out</a></li>
+  
+  
+     
+          </ul>
+        </li>
+           
+                  
+                </ul>
+              </div>              
+              <!-- Navigation ends -->
+              
+            </div>
+            
+          
+            
+          </div>
+        </div>
+      </div>
+  
+      <!-- Header two ends -->
+      
+        
+    
+
+ 
+  
+
+{% endblock %}
+
+
+
+<title>{% block title %} Assets {% endblock %}</title>
+{% block inlinejs %} 
+$(document).ready(function () {
+  var data={{data|safe}};
+            
+            var source =
+            {
+                 localdata:data,
+                datatype: "json",
+                datafields: [
+                    { name: 'external_id',map:'fields>external_id', type: 'number' },
+                    { name: 'status',map:'fields>status', type: 'string' },
+                    { name: 'company',map:'fields>company',type: 'string' },
+                    { name: 'm',map:'fields>m',type: 'string' },
+                    { name: 'title', map:'fields>title', type:'string' },
+                    { name: 'address',map:'fields>address',type: 'string' },
+                    { name: 'unit', map:'fields>unit',type: 'string' },
+                    { name: 'city',map:'fields>city',type: 'string' },
+                    { name: 'state',map:'fields>state', type: 'string' },
+                    { name: 'zip_code',map:'fields>zip_code', type: 'number' },
+                    { name: 'square_feet',map:'fields>square_feet', type: 'number' },
+                    { name: 'forms',map:'fields>forms', type: 'string' },
+                    { name: 'parking_space',map:'fields>parking_space', type: 'string' },
+                    { name: 'area',map:'fields>area',type: 'string' },
+                    { name: 'type',map:'fields>type',type: 'string' },
+                    { name: 'bedroom', map:'fields>bedroom', type:'string' },
+                    { name: 'bathroom',map:'fields>bathroom',type: 'string' },
+                    { name: 'monthly_rent', map:'fields>monthly_rent',type: 'string' },
+                    { name: 'price_bedroom',map:'fields>price_bedroom',type: 'string' },
+                    { name: 'available',map:'fields>available', type: 'string' },
+                    { name: 'paid_utilities',map:'fields>paid_utilities', type: 'string' },
+                    { name: 'pets',map:'fields>pets', type: 'number' },
+                    { name: 'pets_info',map:'fields>pets_info', type: 'number' },
+                    { name: 'laundry',map:'fields>laundry', type: 'string' },
+                    { name: 'web_description',map:'fields>web_description',type: 'string' },
+                    { name: 'tenant_phone',map:'fields>tenant_phone',type: 'string' },
+                    { name: 'gate_code', map:'fields>gate_code', type:'string' },
+                    { name: 'key_number',map:'fields>key_number',type: 'string' },
+                    { name: 'email', map:'fields>email',type: 'string' },
+                    { name: 'commission',map:'fields>commission',type: 'string' },
+                    { name: 'bonus',map:'fields>bonus', type: 'string' },
+                    { name: 'deposit_paid_to',map:'fields>deposit_paid_to', type: 'string' },
+                    { name: 'description',map:'fields>description', type: 'string' },
+                    { name: 'double_occupancy',map:'fields>double_occupancy',type: 'string' },
+                    { name: 'dbl_occ_info',map:'fields>dbl_occ_info', type: 'string' },
+                    { name: 'listing_type',map:'fields>listing_type', type: 'string' },
+                    { name: 'pool',map:'fields>pool', type: 'string' }
+                    
+                    
+                   
+                ],
+                
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+            $("#jqxgrid").jqxGrid(
+            {
+                width: "100%",
+                autoheight:true,
+                source: dataAdapter,
+                columnsresize: true,
+                altrows: true,
+                editable:true,
+                theme:'custom',
+                pageable: true,
+                filterable: true,
+                filtermode: 'excel',
+                sortable: true,
+                groupable: true,
+                columns: [
+                  { text: 'External ID',datafield: 'external_id', width: 100,minwidth:90,cellsformat:'n'},
+                  { text: 'status', datafield: 'status', width: 100, minwidth: 90 },
+                  { text: 'Company', datafield: 'company',  width: 100 },
+                  { text: 'M', datafield: 'm', minwidth: 100 },
+                  { text: 'Title', datafield: 'title', width: 100, minwidth: 90 },
+                  { text: 'Address', datafield: 'address', width: 100 },
+                  { text: 'Unit', datafield: 'unit', width: 180 },
+                  { text: 'City', datafield: 'city', width: 100 },
+                  { text: 'State', datafield: 'state', minwidth: 100 },
+                  { text: 'Zip Code', datafield: 'zip_code', width: 100, minwidth: 90},
+                  { text: 'Square Feet',datafield: 'square_feet', width: 100, minwidth: 90 },
+                  { text: 'Forms', datafield: 'forms', width: 100, minwidth: 90 },
+                  { text: 'Parking Space', datafield: 'parking_space', width: 100, minwidth: 90 },
+                  { text: 'Area', datafield: 'area',  width: 100 },
+                  { text: 'Type', datafield: 'type', minwidth: 100 },
+                  { text: 'Bedroom', datafield: 'bedroom', width: 100, minwidth: 90 },
+                  { text: 'Bathroom', datafield: 'bathroom', width: 100 },
+                  { text: 'monthly Rent', datafield: 'monthly_rent', width: 180 },
+                  { text: 'Price Per Bedroom', datafield: 'price_bedroom', width: 100 },
+                  { text: 'Available', datafield: 'available', minwidth: 100 },
+                  { text: 'Paid Utilities', datafield: 'paid_utilities', width: 100, minwidth: 90},
+                  { text: 'Pets', datafield: 'pets', width: 180 },
+                  { text: 'Pets Info', datafield: 'pets_info', width: 100 },
+                  { text: 'Laundry', datafield: 'laundry', minwidth: 100 },
+                  { text: 'Web Description', datafield: 'web_description', width: 100, minwidth: 90},
+                  { text: 'Tenant Phone',datafield: 'tenant_phone', width: 100, minwidth: 90 },
+                  { text: 'Gate Code', datafield: 'gate_code', width: 100, minwidth: 90 },
+                  { text: 'Key Number', datafield: 'key_number',  width: 100 },
+                  { text: 'Email', datafield: 'email', minwidth: 100 },
+                  { text: 'Commission', datafield: 'commission', width: 100, minwidth: 90 },
+                  { text: 'Bonus', datafield: 'bonus', width: 100 },
+                  { text: 'Deposit Paid To', datafield: 'deposit_paid_to', width: 180 },
+                  { text: 'Description', datafield: 'description', width: 100 },
+                  { text: 'Double Occupancy', datafield: 'double_occupancy', width: 100, minwidth: 90 },
+                  { text: 'Dbl Occ Info', datafield: 'dbl_occ_info', width: 100 },
+                  { text: 'Listing Type', datafield: 'listing_type', width: 180 },
+                  { text: 'Pool', datafield: 'pool', width: 100 }
+                 
+                   
+                ]
+            });
+
+
+$("#exportOptions").jqxDropDownList({  source: ['xls', 'csv', 'tsv'],width: '200', height: '25' }).jqxDropDownList({dropDownHeight: 90});
+
+            $("#go").jqxButton();
+            $("#go").click(function () {
+                var selectedOption = $("#exportOptions").jqxDropDownList('getSelectedItem');
+                if (selectedOption) {
+                    $("#jqxgrid").jqxGrid('exportdata', selectedOption.label, 'Master_List');
+                };
+            });
+        });
+  {% endblock %}
+
+
+{% block master_list %} active {% endblock %}
+
+
+{% block pagetitle %}
+All Properties
+{% endblock %}
+
+{% block content %} 
+
+    <div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float:left;margin-left: 5px;width: 100%;margin-top:30px;" >
+        <div id="jqxgrid"></div>
+        <div style="float: left; margin-top: 15px;" id="exportOptions">
+        </div>
+        <button style="float: left; margin: 15px;" id="go">
+            GO</button>
+    </div>
+    </div>
+
+
+
+{% endblock %}
+

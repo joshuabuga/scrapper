@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{%block title %} {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css"
+      rel="stylesheet" media="screen">
+      
+    <link rel="stylesheet" href="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/styles/jqx.custom.css" type="text/css" />
+    <script type="text/javascript" src="{{ STATIC_URL }}scripts/jquery-1.10.2.min.js"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}scripts/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.grouping.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.selection.js"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdata.js"></script> 
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdata.export.js"></script> 
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.export.js"></script> 
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.sort.js"></script> 
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdropdownlist.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxcheckbox.js"></script>
+       <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxlistbox.js"></script>
+       <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.filter.js"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxchart.js"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.columnsresize.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxpanel.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdatetimeinput.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/globalization/globalize.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxcalendar.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxnumberinput.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxtabs.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxtree.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdropdownbutton.js"></script>
+
+
+
+
+
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/styles/jqx.summer.css" type="text/css" />
+   
+    <link href="{{ STATIC_URL }}dropzone/css/dropzone.css" type="text/css" rel="stylesheet"/>
+
+        <script src="{{ STATIC_URL }}dropzone/js/dropzone.js"></script>
+    
+
+
+    
+     {% block extrascript %} {% endblock %}
+
+  </head>
+  {% block nav %}
+<div id='content'>
+        <script type="text/javascript">
+             $(document).ready(function () {
+            // create jqxMenu
+            $("#jqxMenu").jqxMenu({ width: '100%', height: '32px', autoSizeMainItems: true});
+            $("#jqxMenu").jqxMenu('minimize');
+            $("#jqxMenu").css('visibility', 'visible');
+        });
+    </script>
+        <div id='jqxWidget' style='height: 300px;'>
+            <div id='jqxMenu' style='visibility: hidden; margin-left: 5px;margin-top:20px;margin-bottom:10px; background-color: white;'>
+                
+                <ul>
+            <li><a href="http://localhost:8000/upload/">Upload Files</a></li>
+            <li><a href="http://localhost:8000/master_list/">Master List</a></li>
+            <li><a href="http://localhost:8000/download_file/">download files</a></li>
+        </ul>
+            </div>
+            
+
+{% endblock %}
+{% block category %}{% endblock %}
+{% block content %}{% endblock %}
+</html>

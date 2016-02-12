@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{%block title %} {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css"
+      rel="stylesheet" media="screen">
+      <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-flat.min.css"
+      rel="stylesheet" media="screen">
+<link href="{{ STATIC_URL }}bootstrap/css/style.css"
+      rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/styles/jqx.custom.css" type="text/css" />
+    <script type="text/javascript" src="{{ STATIC_URL }}scripts/jquery-1.10.2.min.js"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}scripts/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.grouping.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.pager.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.selection.js"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdata.js"></script> 
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdata.export.js"></script> 
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.export.js"></script> 
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.sort.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.edit.js"></script>  
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdropdownlist.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxcheckbox.js"></script>
+       <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxlistbox.js"></script>
+       <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.filter.js"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxchart.js"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxgrid.columnsresize.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxpanel.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdatetimeinput.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/globalization/globalize.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxcalendar.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxnumberinput.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxtabs.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxtree.js"></script>
+      <script type="text/javascript" src="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/jqxdropdownbutton.js"></script>
+      <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css"> -->
+
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+          
+-->
+         {% block extrascript %} {% endblock %}
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}jqwidgets-ver3.5.0/jqwidgets/styles/jqx.summer.css" type="text/css" />
+
+    <script type="text/javascript">
+      {% block inlinejs %} {% endblock %} 
+    </script>
+      {% block materialize %}
+
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your,Keywords">
+    <meta name="author" content="ResponsiveWebInc">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Styles -->
+    <!-- Bootstrap CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font awesome CSS -->
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Magnific Popup -->
+    <link href="/static/css/magnific-popup.css" rel="stylesheet">
+    <!-- Owl carousel -->
+    <link href="/static/css/owl.carousel.css" rel="stylesheet">
+    
+    <!-- CSS for this page -->
+    <!-- Real estate CSS -->
+    <link href="/static/css/styles/real-estate.css" rel="stylesheet">
+    
+    <!-- Base style -->
+    <link href="/static/css/styles/style.css" rel="stylesheet">
+    <!-- Skin CSS -->
+    <link href="/static/css/styles/skin-lblue.css" rel="stylesheet" id="color_theme">
+    
+    <!-- Custom CSS. Type your CSS code in custom.css file -->
+    <link href="/static/css/custom.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
+    <!-- extensions -->
+      {% endblock %}
+
+  
+  <body>
+
+
+{% block nav %}
+        <ul class="nav nav-tabs">
+      
+            <li class="{% block master_list %} {% endblock %}" >
+              <a href="http://104.236.108.116/">Asset List</a>
+            </li>
+            <li class="{% block upload_files %} {% endblock %}" >
+              <a href="http://104.236.108.116/upload/">Upload Aseet Files</a>
+            </li>
+            <li class="{% block download_files %} {% endblock %}" >
+              <a href="/update_src_asset_list/">Update Asset List</a>
+            </li>
+            
+   
+        </ul>
+{% endblock %}
+
+{% block pageheader %}
+ <div class="container">
+
+       <h2 class="page-header">Uptown Realty<small>/ {% block pagetitle %} {% endblock %}</small></h2>
+{% endblock %}
+
+<div id='content' class="row">
+{% block category %}{% endblock %}
+{% block content %}{% endblock %}
+   
+  </div>
+  </div>
+</body>
+</html>

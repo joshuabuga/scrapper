@@ -1,0 +1,12 @@
+{% extends "default/base.html" %}
+
+<title>{% block title %} error {% endblock %}</title>
+{% block content %}
+<div style="margin-left:25%;margin-right:25%;margin-top:5%">
+<div class="alert alert-danger" role="alert">There were errors uploading property list,Please contact the webmaster</div> 
+</div>
+<center>
+<a href="http://104.236.50.100/"> <button "add_file_btn" class="btn btn-primary pull-right"> Go to Upload Page</button>
+</center>
+</div>
+{% endblock %}
